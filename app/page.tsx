@@ -1,11 +1,22 @@
+"use client";
+
+import Spinningbg from "@/components/spinning/Spinningbg";
 import Header from "@/components/header/Header";
 
 export default function Home() {
   return (
-    <div className="w-full flex-1">
-      <div className="">
-        <Header />
+    <main className="relative w-screen h-screen">
+      {/* background gradient radial effectv*/}
+      <div>
+        <Spinningbg />
       </div>
-    </div>
+      {/* main contents */}
+      <div className="">
+        {/* header */}
+        <div className="">
+          <Header />
+        </div>
+      </div>
+    </main>
   );
 }
