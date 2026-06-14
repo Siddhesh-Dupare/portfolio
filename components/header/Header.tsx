@@ -3,6 +3,7 @@
 import Link from "next/link";
 
 import { menuLinks } from "./menu.data";
+import MenuDrawer from "./menuDrawer";
 
 export default function Header() {
   return (
@@ -14,7 +15,7 @@ export default function Header() {
           Sidd
         </Link>
         {/* Menu bars */}
-        <div className="space-x-10">
+        <div className="hidden md:flex space-x-10">
           {menuLinks.map((link) => (
             <Link
               key={link.href}
@@ -24,6 +25,11 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
+        </div>
+
+        {/* responsive for small scren */}
+        <div className="md:hidden">
+          <MenuDrawer />
         </div>
       </div>
     </div>
