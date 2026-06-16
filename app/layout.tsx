@@ -8,6 +8,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import Cursor from "@/components/cursor/Cursor";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -55,6 +56,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Cursor />
           {children}
         </ThemeProvider>
       </body>
