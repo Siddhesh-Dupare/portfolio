@@ -1,22 +1,24 @@
 "use client";
 
-import Spinningbg from "@/components/spinning/Spinningbg";
 import Header from "@/components/header/Header";
+import Hero from "@/components/hero/Hero";
+import Projects from "@/components/projects/Projects";
 
 export default function Home() {
   return (
-    <main className="relative w-screen h-screen">
-      {/* background gradient radial effectv*/}
-      <div>
-        <Spinningbg />
-      </div>
+    <main className="relative w-full font-mozilla-headline">
       {/* main contents */}
-      <div className="">
+      <div className="h-screen relative z-10 flex flex-col">
         {/* header */}
-        <div className="">
-          <Header />
+        <Header />
+        <div className="flex-1 flex md:items-center md:justify-center">
+          <Hero />
         </div>
       </div>
+
+      <section className="h-screen flex itens-center justify-center">
+        <Projects />
+      </section>
     </main>
   );
 }

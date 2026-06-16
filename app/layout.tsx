@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
+import {
+  Bitcount_Prop_Single,
+  Mozilla_Headline,
+  JetBrains_Mono,
+} from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -7,17 +11,17 @@ import { ThemeProvider } from "@/components/theme/theme-provider";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-jetbrains-mono",
 });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const bitcount = Bitcount_Prop_Single({
   subsets: ["latin"],
+  variable: "--font-bitcount-prop-single",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const mozillaHeadline = Mozilla_Headline({
   subsets: ["latin"],
+  variable: "--font-mozilla-headline",
 });
 
 export const metadata: Metadata = {
@@ -33,14 +37,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
       className={cn(
         "h-full",
         "antialiased",
-        geistSans.variable,
-        geistMono.variable,
         "font-mono",
+        bitcount.variable,
         jetbrainsMono.variable,
+        mozillaHeadline.variable,
       )}
     >
       <body className="min-h-full flex flex-col">
